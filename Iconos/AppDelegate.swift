@@ -15,6 +15,35 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
+        window = UIWindow(frame: UIScreen.main.bounds)
+        if let window = window{
+              window.tintColor = ColorStyle.tintColor()
+             Style.customize()
+            let first = First()
+            let second = Second()
+            let third = Third()
+            let fourth = Fourth()
+            let fifth = Fifth()
+            
+            
+            
+            let firstNavController = UINavigationController(rootViewController: first)
+            let secondNavController = UINavigationController(rootViewController: second)
+            let thirdNavController = UINavigationController(rootViewController: third)
+            let fourthNavController = UINavigationController(rootViewController: fourth)
+            let fifthNavController = UINavigationController(rootViewController: fifth)
+            
+            
+            
+            
+            
+            
+            let tabController = UITabBarController()
+            tabController.viewControllers =
+            [firstNavController, secondNavController, thirdNavController, fourthNavController, fifthNavController]
+            window.rootViewController = tabController
+            window.makeKeyAndVisible()
+        }
         // Override point for customization after application launch.
         return true
     }
